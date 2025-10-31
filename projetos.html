@@ -9,81 +9,69 @@
 </head>
 <body>
 
-    <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos Sociais - GreenMove</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
   <header>
-  <div class="header-container">
-    <img src="img/logo.png" alt="Logo GreenMove">
-    <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
-    <nav id="menu">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <div class="header-container">
+      <img src="img/logo.png" alt="Logo GreenMove">
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html" class="ativo">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
+  <div class="container">
     <section id="projetos">
       <h2>Projetos Sociais</h2>
-      <p>
-        A GreenMove atua em diversas frentes para transformar a relação das pessoas com o meio ambiente.
-        Nossos projetos unem voluntariado, conscientização e impacto positivo em comunidades locais.
-      </p>
-      <img src="img/projetos-greenmove.jpg" alt="Voluntários plantando árvores">
+      <div class="card">
+        <p>A GreenMove atua em diversas frentes para transformar a relação das pessoas com o meio ambiente.
+        Nossos projetos unem voluntariado, conscientização e impacto positivo em comunidades locais.</p>
+      </div>
     </section>
 
     <section id="voluntariado">
       <h2>Seja um Voluntário</h2>
-      <article>
+      <div class="card">
         <h3>Como participar</h3>
-        <p>
-          Nossos voluntários são o coração da GreenMove. Você pode se inscrever em mutirões de limpeza,
-          plantios coletivos e oficinas educativas. Basta se cadastrar e escolher o tipo de atividade que mais combina com você.
-        </p>
-      </article>
+        <p>Você pode se inscrever em mutirões de limpeza, plantios coletivos e oficinas educativas.
+        Basta se cadastrar e escolher a atividade que mais combina com você.</p>
+      </div>
 
-      <article>
+      <div class="card">
         <h3>Benefícios de ser voluntário</h3>
         <ul>
           <li>Contribuir diretamente para um planeta mais sustentável;</li>
           <li>Aprender sobre práticas ecológicas;</li>
           <li>Fazer parte de uma comunidade engajada e inspiradora.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
     <section id="doacao">
       <h2>Como Doar</h2>
-      <p>
-        As doações ajudam a financiar ações ambientais, compra de mudas, materiais educativos e eventos comunitários.
-        Qualquer valor faz a diferença!
-      </p>
-
-      <figure>
-        <img src="img/doacao-greenmove.jpg" alt="Pessoa segurando uma muda de planta">
-        <figcaption>Doe e ajude a espalhar o verde pelo mundo.</figcaption>
-      </figure>
-
-      <p>
-        💚 Para doar, entre em contato pelo e-mail <strong>doe@greenmove.org</strong> ou acesse nossa área de cadastro para mais informações.
-      </p>
+      <div class="card">
+        <p>As doações ajudam a financiar ações ambientais, compra de mudas, materiais educativos e eventos comunitários.
+        Qualquer valor faz a diferença!</p>
+        <figure>
+          <img src="img/doacao-greenmove.jpg" alt="Pessoa segurando uma muda de planta">
+          <figcaption>Doe e ajude a espalhar o verde pelo mundo.</figcaption>
+        </figure>
+        <p>Para doar, entre em contato pelo e-mail <strong>doe@greenmove.org</strong> ou acesse nossa área de cadastro para mais informações.</p>
+      </div>
     </section>
-  </main>
+  </div>
+</main>
 
   <footer>
-    <p>&copy; 2025 GreenMove. Todos os direitos reservados.</p>
+    <div class="container">
+      <p>&copy; 2025 GreenMove. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
-    
 </body>
 </html>
