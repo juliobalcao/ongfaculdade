@@ -1,3 +1,4 @@
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
 
@@ -7,42 +8,74 @@ menuToggle.addEventListener('click', () => {
 });
 
 
-const form = document.querySelector('form');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault(); // evita envio real do formulário
 
-  // Checa se todos os campos obrigatórios estão preenchidos
-  if (form.checkValidity()) {
-    // Cria o container da mensagem
-    const mensagem = document.createElement('div');
-    mensagem.style.position = 'fixed';
-    mensagem.style.top = '50%';
-    mensagem.style.left = '50%';
-    mensagem.style.transform = 'translate(-50%, -50%)';
-    mensagem.style.backgroundColor = '#ffffb3';
-    mensagem.style.color = '#1b2626';
-    mensagem.style.padding = '2rem';
-    mensagem.style.borderRadius = '10px';
-    mensagem.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
-    mensagem.style.textAlign = 'center';
-    mensagem.style.zIndex = '10000';
+function aplicarMascaraCPF(input) {
+  let valor = input.value.replace(/\D/g, '');
+  valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+  valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+  valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+  input.value = valor;
+}
 
-    mensagem.innerHTML = `
-      <p><strong>Formulário enviado!</strong></p>
-      <button id="voltar">Voltar para a página inicial</button>
-    `;
+function aplicarMascaraTelefone(input) {
+  let valor = input.value.replace(/\D/g, '');
+  valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+  valor = valor.replace(/(\d{5})(\d{4})$/, '$1-$2');
+  input.value = valor;
+}
 
-    document.body.appendChild(mensagem);
+function aplicarMascaraCEP(input) {
+  let valor = input.value.replace(/\D/g, '');
+  valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+  input.value = valor;
+}
 
-    // Redireciona ao clicar no botão
-    document.getElementById('voltar').addEventListener('click', () => {
-      window.location.href = 'index.html';
-    });
 
-    // Opcional: limpar formulário
-    form.reset();
-  } else {
-    form.reportValidity(); // mostra mensagem de campos obrigatórios
-  }
+const inputCPF = document.getElementById('cpf');
+const inputTelefone = document.getElementById('telefone');
+const inputCEP = document.getElementById('cep');
+
+if(inputCPF) inputCPF.addEventListener('input', () => aplicarMascaraCPF(inputCPF));
+if(inputTelefone) inputTelefone.addEventListener('input', () => aplicarMascaraTelefone(inputTelefone));
+if(inputCEP) inputCEP.addEventListener('input', () => aplicarMascaraCEP(inputCEP));
+
+
+
+const form = document.getElementById('formCadastro');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+
+  const modal = document.createElement('div');
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100%';
+  modal.style.height = '100%';
+  modal.style.backgroundColor = 'rgba(0,0,0,0.6)';
+  modal.style.display = 'flex';
+  modal.style.alignItems = 'center';
+  modal.style.justifyContent = 'center';
+  modal.style.zIndex = '2000';
+
+  const modalContent = document.createElement('div');
+  modalContent.style.backgroundColor = '#ffffff';
+  modalContent.style.padding = '2rem';
+  modalContent.style.borderRadius = '8px';
+  modalContent.style.textAlign = 'center';
+  modalContent.innerHTML = `
+    <h2>Formulário enviado!</h2>
+    <p>Obrigado por se cadastrar como voluntário da GreenMove.</p>
+    <button id="btnRedirecionar">Ir para a página inicial</button>
+  `;
+
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+ 
+  document.getElementById('btnRedirecionar').addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
 });
