@@ -4,6 +4,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
 
+:root {
+
+  --cor-primaria: #1b2626;
+  --cor-secundaria: #ffffb3;
+  --cor-terciaria: #ffffff;
+  --cor-quaternaria: #000000;
+  --cor-success: #4caf50;
+  --cor-error: #f44336;
+  --cor-warning: #ff9800;
+  --cor-info: #2196f3;
+
+  
+  --font-family: 'Geist', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  
+  --grid-columns: 12;
+}
+
 
 * {
   margin: 0;
@@ -19,7 +51,37 @@ body {
 }
 
 
+#acoes {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  padding: var(--space-4);
+  border-radius: 8px;
+}
 
+
+#acoes .card {
+  background-color: transparent;
+  color: var(--cor-secundaria);
+}
+
+#acoes h2, #acoes h3, #acoes p {
+  color: var(--cor-terciaria); 
+}
+
+
+#acoes .card {
+  padding: var(--space-3);
+}
+
+
+h2 {
+  background-color: var(--cor-primaria); 
+  color: var(--cor-secundaria); 
+  padding: 0.5rem 1rem; 
+  border-radius: 6px; 
+  display: inline-block; 
+  margin-bottom: 1rem;
+}
 
 
 header {
@@ -83,6 +145,7 @@ h1 {
 }
 
 h2 {
+  color: var(--cor-secundaria);
   margin: 1.5rem 0 1rem;
   border-left: 5px solid #ffffb3;
   padding-left: 10px;
@@ -104,6 +167,7 @@ img {
   max-width: 100%;
   border-radius: 6px;
 }
+
 
 
 
